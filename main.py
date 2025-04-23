@@ -588,7 +588,6 @@ def get_userInfo():
     }
 
     try:
-        try:
     result = response.json()
     return result
 except ValueError:
