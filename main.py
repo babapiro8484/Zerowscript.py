@@ -591,4 +591,4 @@ def get_userInfo():
         response = requests.post(url, json=data, timeout=10.0)
         
         if response.status_code == 401:
-            Your_Data.clear
+            Your_Data.clear()
