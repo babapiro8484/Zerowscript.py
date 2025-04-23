@@ -588,7 +588,11 @@ def get_userInfo():
     }
 
     try:
-        response = requests.post(url, json=data, timeout=10.0)
+        try:
+    result = response.json()
+    return result
+except ValueError:
+    return {"status": False, "message": f"Invalid JSON response: {response.text}"}
         
         if response.status_code == 401:
             Your_Data.clear()
